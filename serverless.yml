@@ -1,0 +1,15 @@
+service: serverless-typescript-playground
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+functions:
+  function1:
+    handler: src/functions/index.handler
